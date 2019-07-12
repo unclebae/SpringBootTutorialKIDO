@@ -1,0 +1,9 @@
+### POST Greeting
+POST http://localhost:8080/
+Content-Type: application/json
+
+{
+    "userId": "kido001",
+    "userName": "KIDO BAE",
+    "age": 40
+}
