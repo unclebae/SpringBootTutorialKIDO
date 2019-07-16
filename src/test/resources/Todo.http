@@ -1,0 +1,21 @@
+### all todos
+GET http://localhost:8080/todos
+
+### todo by Id
+GET http://localhost:8080/todos/1
+
+### post todo
+POST http://localhost:8080/todos/todo
+
+Hello
+
+### put todo for modify action Item
+PUT http://localhost:8080/todos/todo/4
+
+Hello Kido
+
+### toggleTodo
+PUT http://localhost:8080/todos/todo/4/toggle
+
+### deleteTodo
+DELETE http://localhost:8080/todos/todo/4
