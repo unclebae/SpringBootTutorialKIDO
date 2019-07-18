@@ -7,3 +7,11 @@ Content-Type: application/json
     "userName": "KIDO BAE",
     "age": 40
 }
+
+### GET user
+GET http://localhost:8080/users/hello
+Content-Type: application/json
+
+### GET user
+GET http://localhost:8080/users/ex/hello
+Content-Type: application/json
