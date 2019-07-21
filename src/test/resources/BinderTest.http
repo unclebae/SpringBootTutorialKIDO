@@ -1,0 +1,24 @@
+### GET time
+GET http://localhost:8080/bind/2019-08-11T14:30:15
+
+### GET FamilyType
+GET http://localhost:8080/bind/familytype/SKT
+
+### POST SKFamily
+POST http://localhost:8080/bind/family/info
+Content-Type: application/json
+
+{
+    "familyType": "SKT",
+    "userId": "1111111",
+    "name": "SK-Global"
+}
+### POST SKFamily
+POST http://localhost:8080/bind/family/info2
+Content-Type: application/json
+
+{
+    "familyType": "SKT",
+    "userId": "1111111",
+    "name": "SK-Global"
+}
