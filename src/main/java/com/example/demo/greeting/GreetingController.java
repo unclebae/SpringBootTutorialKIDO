@@ -2,6 +2,8 @@ package com.example.demo.greeting;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,12 +47,21 @@ public class GreetingController {
 		return "User Id: " + userId;
 	}
 
-	@ExceptionHandler(value = IllegalArgumentException.class)
-	public String handleError(HttpServletRequest req, Exception exception) {
-		String message = "IllegalArgumentException: Request: " + req.getRequestURI() + " exception : " + exception;
-		System.out.println(message);
+	// @ExceptionHandler(value = IllegalArgumentException.class)
+	// public String handleError(HttpServletRequest req, Exception exception) {
+	// String message = "IllegalArgumentException: Request: " + req.getRequestURI()
+	// + " exception : " + exception;
+	// System.out.println(message);
 
-		return message;
+	// return message;
+	// }
+
+	@ExceptionHandler(value = IllegalArgumentException.class)
+	public ResponseEntity<ErrorInfo> handleError2(HttpServletRequest req, Exception exception) {
+		String message = "IllegalArgumentException: Request: " + req.getRequestURI() + " exception : " + exception;
+		ErrorInfo errInfo = new ErrorInfo("ILARG001", message, "{}");
+
+		return new ResponseEntity<ErrorInfo>(errInfo, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 }
